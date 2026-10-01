@@ -1,8 +1,8 @@
-#AI-Crime-Complaints-Categorization
+# AI-Crime-Complaints-Categorization
 
 AI-powered system that automatically classifies crime complaints by crime type, severity, and reason to support efficient complaint prioritization and routing.
 
-##Research papers :
+## Research papers :
 
 1.A Framework for LLM-Assisted Smart Policing System
 https://ieeexplore.ieee.org/document/10538107
@@ -43,8 +43,3 @@ https://ieeexplore.ieee.org/document/9207999
 3.https://data.police.uk/data/
 
 4.https://data.cityofnewyork.us/resource/qgea-i56i.csv
-
-
-
-
-
