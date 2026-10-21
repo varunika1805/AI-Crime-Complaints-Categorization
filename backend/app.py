@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 import joblib
 import os
@@ -6,7 +6,16 @@ import sqlite3
 import uuid
 from datetime import datetime
 
-app = Flask(__name__)
+app = Flask(
+    __name__,
+    static_folder=os.path.join(
+        os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+        "frontend-react",
+        "dist",
+        "assets"
+    ),
+    static_url_path="/assets"
+)
 CORS(app)
 
 # =========================================================
@@ -96,10 +105,8 @@ init_db()
 
 @app.route("/")
 def home():
-
-    return "AI Crime Complaint API is running!"
-
-
+    frontend_path = os.path.join(BASE_DIR, "frontend-react", "dist")
+    return send_from_directory(frontend_path, "index.html")
 # =========================================================
 # PREDICT
 # =========================================================
@@ -478,3 +485,6 @@ if __name__ == "__main__":
         port=5000,
         debug=True
     )
+
+
+
