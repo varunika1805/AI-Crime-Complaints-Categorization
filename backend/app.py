@@ -42,9 +42,7 @@ severity_tfidf_path = os.path.join(
     BASE_DIR, "models", "crime_severity_tfidf.pkl"
 )
 
-DATABASE = os.path.join(
-    BASE_DIR, "complaints.db"
-)
+DATABASE = os.environ.get("DATABASE_PATH", os.path.join(BASE_DIR, "complaints.db"))
 
 
 # =========================================================
@@ -485,6 +483,7 @@ if __name__ == "__main__":
         port=5000,
         debug=True
     )
+
 
 
 
